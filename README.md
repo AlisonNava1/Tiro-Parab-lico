@@ -1,5 +1,6 @@
 # Tiro-Parab-lico
 Juego que simula un tiro parabólico
+
 El programa antes de ser modificado:
 * Terminaba el juego una vez que los objetivos tocaban el borde de la consola.
 * Tenia una velocidad de pelota y objetivos lenta.
