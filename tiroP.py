@@ -1,15 +1,18 @@
+#Modificado por:
+#Autor: Alison Daniela Nava Bravo
+#Autor: Eduardo Aguilar Chías
+
 from random import randrange
 from turtle import *
 from freegames import vector
 from random import *
-
 
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
 def tap(x, y):
-    "Respond to screen tap."
+    "Responde al tap de la pantalla"
     if not inside(ball):
         ball.x = -199
         ball.y = -199
@@ -17,12 +20,12 @@ def tap(x, y):
         speed.y = (y + 200) / 25
 
 def inside(xy):
-    "Return True if xy within screen."
+    "Regresa True si xy estan dentro de la pantalla."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 def draw():
-    "Draw ball and targets."
-    crayola = ["DeepPink","DeepSkyBlue","Lime","Crimson","Fuchsia","Aquamarine"]
+    "Dibuja la pelota y los objetivos"
+    crayola = ["DeepPink","DeepSkyBlue","Lime","Crimson","Fuchsia","Aquamarine"]  # Lista de posibles colores para los objetivos.
     clear()
 
     for target in targets:
@@ -36,7 +39,7 @@ def draw():
     update()
 
 def move():
-    "Move ball and targets."
+    "Mueve la pelota y los objetivos"
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
@@ -57,7 +60,6 @@ def move():
             targets.append(target)
 
     draw()
-
 
     ontimer(move, 50)
 
