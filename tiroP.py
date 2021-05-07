@@ -1,6 +1,8 @@
 from random import randrange
 from turtle import *
 from freegames import vector
+from random import *
+
 
 ball = vector(-200, -200)
 speed = vector(0, 0)
@@ -20,15 +22,16 @@ def inside(xy):
 
 def draw():
     "Draw ball and targets."
+    crayola = ["DeepPink","DeepSkyBlue","Lime","Crimson","Fuchsia","Aquamarine"]
     clear()
 
     for target in targets:
         goto(target.x, target.y)
-        dot(20, 'blue')
+        dot(20, choice(crayola))
 
     if inside(ball):
         goto(ball.x, ball.y)
-        dot(6, 'red')
+        dot(6, 'Black')
 
     update()
 
@@ -55,9 +58,6 @@ def move():
 
     draw()
 
-    for target in targets:
-        if not inside(target):
-            return
 
     ontimer(move, 50)
 
